@@ -2,6 +2,7 @@ import { getRecords, deleteRecord } from "@/utils/recordsFunction";
 import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import { useRouter } from "next/router";
+import styles from "@/styles/styles.module.css";
 
 
 const MainPage = () => {
@@ -41,27 +42,22 @@ const MainPage = () => {
       if (isLoading) return <Spinner />;
 
     return (
-        <div className="p-4 flex flex-wrap gap-4">
+      <div className="p-4 flex flex-wrap gap-4">
       {records.map((record) => (
         <div
           key={record._id}
-          className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          className={styles.card} // Aplicarea clasei CSS module
         >
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {record.name}
-          </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {record.description}
-          </p>
-          
+          <h5 className={styles['card-title']}>{record.Name}</h5>
+          <p className={styles['card-info']}>Latin: {record.Latin}</p>
+          <p className={styles['card-info']}>Price: {record.Price}</p>
           <button
-          type="button"
-          className="text-white bg-black hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300
-          dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-          onClick={() => handleDeleteRecord(record._id)}
-        >
-          Delete
-        </button>
+            type="button"
+            className={styles['card-button']} // Aplicarea clasei CSS module
+            onClick={() => handleDeleteRecord(record._id)}
+          >
+            Delete
+          </button>
         </div>
       ))}
     </div>
