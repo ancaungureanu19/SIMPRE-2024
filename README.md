@@ -49,6 +49,7 @@ MongoDB reprezintă un sistem de gestiune a bazelor de date NoSQL care oferă fl
 Linkuri utile:
 •	https://simpre-2024-yxg3-k4lglfung-ancas-projects-3d9d6270.vercel.app/
 •	https://github.com/ancaungureanu19/SIMPRE-2024
+https://youtu.be/0CK_7onrOVY
 
 
 Tehnologii
